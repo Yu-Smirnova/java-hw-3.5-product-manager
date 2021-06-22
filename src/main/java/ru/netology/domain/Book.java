@@ -1,6 +1,6 @@
 package ru.netology.domain;
 
-public class Book extends Product{
+public class Book extends Product {
     private String author;
 
     public Book(int id, String name, int price, String author) {
@@ -8,7 +8,7 @@ public class Book extends Product{
         this.author = author;
     }
 
-    public Book(){
+    public Book() {
         super();
     }
 
@@ -18,5 +18,16 @@ public class Book extends Product{
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (author.contains(search)) {
+            return true;
+        }
+        return false;
     }
 }

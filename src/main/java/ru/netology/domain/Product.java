@@ -3,7 +3,7 @@ package ru.netology.domain;
 public class Product {
     private int id;
     private String name;
-    protected int price;
+    private int price;
 
     public Product(int id, String name, int price) {
         this.id = id;
@@ -11,7 +11,7 @@ public class Product {
         this.price = price;
     }
 
-    public Product(){
+    public Product() {
     }
 
     public int getId() {
@@ -36,5 +36,12 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public boolean matches(String search) {
+        if (name.contains(search)) {
+            return true;
+        }
+        return false;
     }
 }
